@@ -44,7 +44,7 @@ namespace AutomationPractice.Steps
             ut.ClickOnElement(FirstP.fnp);
             //ss.SaveAsFile("C:\\ah.jpg".ToString(), ScreenshotImageFormat.Jpeg);
             //Thread.Sleep(10000);
-          ut.ClickOnElement(FirstP.pic);
+          ut.dClickOnElement(FirstP.pic);
            //ss.SaveAsFile("C:\\ab.jpg".ToString(), ScreenshotImageFormat.Jpeg);
 
         }
