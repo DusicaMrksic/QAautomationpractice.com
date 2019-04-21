@@ -18,7 +18,11 @@ namespace AutomationPractice.Pages
         public By Lastname1 = By.Id("lastname");
         public By Address = By.Id("address1");
         public By City = By.Id("city");
+        public By State = By.Id("id_state");
         public By Zip = By.Id("postcode");
+        public By Mphone = By.Id("phone_mobile");
+        public By Alias = By.Id("alias");
+        public By Regbtn = By.Id("submitAccount");
 
 
         public CreateAccoutPage(IWebDriver driver)

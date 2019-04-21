@@ -42,5 +42,16 @@ namespace AutomationPractice.Helpers
             return string.Format("email{0}@mailnator.com", RandomName.Next(100000, 1000000));
 
         }
+        // metoda za dropdown
+        public void DropdownSelect(By select,string option)
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(select));
+            //nova varijabla
+            var dropdown = driver.FindElement(select);
+            var selectElement = new SelectElement(dropdown);
+            selectElement.SelectByText(option);
+
+        }
     }
 }
