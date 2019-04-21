@@ -96,6 +96,14 @@ namespace AutomationPractice.Steps
             ut.ClickOnElement(regbtn.Regbtn);
         }
 
+        [Then(@"user's full name is displayed")]
+        public void ThenUserSFullNameIsDisplayed()
+        {
+            string FN = ScenarioContext.Current.Get<string>(TestConstants.FullName);
+            Assert.True(ut.TextPresentInElement(FN).Displayed, "User's full name is not dispayed");
+            
+        }
+
 
     }
 

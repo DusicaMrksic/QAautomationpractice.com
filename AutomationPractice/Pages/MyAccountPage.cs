@@ -15,7 +15,6 @@ namespace AutomationPractice.Pages
         public By SignOutBtn = By.ClassName("logout");
         public By WishL = By.ClassName("lnk_wishlist");
         
-
         public MyAccountPage(IWebDriver driver)
 
         {
