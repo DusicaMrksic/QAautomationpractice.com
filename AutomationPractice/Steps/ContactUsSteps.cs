@@ -18,17 +18,24 @@ namespace AutomationPractice.Steps
             ut.ClickOnElement(contactUs.ContactUsBtn);
         }
         
-        [Given(@"user enter all mandatory fields")]
+        [Given(@"user enter mandatory fields Subject Heading and email address")]
         public void GivenUserEnterAllMandatoryFields()
         {
             ContactUs cus = new ContactUs(Driver);
             ut.DropdownSelect(cus.SubjectHeadingDD, TestConstants.SubjectHeadingDD);
             string anyemail = ut.GenerateRandomEmail();
             ut.EnterTextInElement(cus.MailAddress, anyemail);
-            ut.EnterTextInElement(cus.Message, TestConstants.messagefield);
-            //  ContactUs mesagge = new ContactUs(Driver);
-            // ut.EnterTextInElement(mesagge.Message, be);
+            //ut.EnterTextInElement(cus.Message, TestConstants.messagefield);
+           
         }
+
+        [Given(@"user enters '(.*)' message in message box")]
+        public void GivenUserEntersMessageInMessageBox(string Dusica)
+        {
+            ContactUs mesagge = new ContactUs(Driver);
+            ut.EnterTextInElement(mesagge.Message, Dusica);
+        }
+
 
         [When(@"user clicks on Send button")]
         public void WhenUserClicksOnSendButton()

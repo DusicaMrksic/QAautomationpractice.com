@@ -6,6 +6,7 @@ In order to use all functionalities
 	@ContactUs
 	Scenario: User can open page and send a message
 	Given user opens Contact us page
-	And user enter all mandatory fields
+	And user enter mandatory fields Subject Heading and email address
+	And user enters 'Dusica Mrksic' message in message box 
 	When user clicks on Send button
 	Then Green message is dispayed
