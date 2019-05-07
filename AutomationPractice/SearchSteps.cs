@@ -8,19 +8,14 @@ namespace AutomationPractice
     [Binding]
     public class SearchSteps : Base
     {
-        
+        Utilities ut = new Utilities(Driver);
 
         [Given(@"user enters a '(.*)' search term")]
         public void GivenUserEntersASearchTerm(string dress)
         {
-            Utilities ut = new Utilities(Driver);
-            Homepage Dress = new H
-        }
-        
-        [When(@"user submits the search")]
-        public void WhenUserSubmitsTheSearch()
-        {
-            ScenarioContext.Current.Pending();
+            
+            Homepage Dress = new Homepage(Driver);
+            ut.EnterTextInElement(Dress.searchEnter, dress);
         }
         
         [Then(@"results for a '(.*)' search term are displayed")]

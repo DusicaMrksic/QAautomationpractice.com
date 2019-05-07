@@ -22,6 +22,9 @@ namespace AutomationPractice.Helpers
         public const string MPhone = "00381607291756";
         public const string Alias = "Qa dusica";
         public const string FullName = "";
+        public const string SubjectHeadingDD = "Customer service";
+        public const string messagefield = "myyyy";
+        public const string green = " ";
 
 
     }

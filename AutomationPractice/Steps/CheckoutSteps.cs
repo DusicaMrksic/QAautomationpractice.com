@@ -24,7 +24,7 @@ namespace AutomationPractice.Steps
             ut.EnterTextInElement(search.searchEnter, TestConstants.Search);
         }
         
-        [Given(@"user submits the search")]
+        [StepDefinition(@"user submits the search")]
         public void GivenUserSubmitsTheSearch()
         {
             Homepage searchb = new Homepage(Driver);
