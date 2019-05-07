@@ -41,10 +41,9 @@ namespace AutomationPractice.Steps
         [Then(@"Green message is dispayed")]
         public void ThenGreenMessageIsDispayed()
         {
-            //ContactUs Greenmsgn = new ContactUs(Driver);
-            //Assert.True(ut.ElementDispayed(Greenmsgn.greenMessage), "Message has been successfully sent to cs.");
-            string gn = ScenarioContext.Current.Get<string>(TestConstants.green);
-            Assert.True(ut.TextPresentInElement(gn).Displayed, "User is not dispayed");
+            ContactUs Greenmsgn = new ContactUs(Driver);
+            Assert.True(ut.ElementDispayed(Greenmsgn.greenMessage), "Message has been successfully sent to cs.");
+            //Assert.True(ut.TextPresentInElement("Your message has been successfully sent to our team.").Displayed);
 
         }
     }

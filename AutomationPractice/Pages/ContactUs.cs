@@ -15,7 +15,7 @@ namespace AutomationPractice.Pages
         public By MailAddress = By.Id("email");
         public By Message = By.Id("message");
         public By sendbtn = By.Id("submitMessage");
-        public By greenMessage = By.ClassName("alert alert-success");
+        public By greenMessage = By.XPath("//*[text()[contains(.,'Your message has been successfully sent to our team.')]]");
 
         public ContactUs(IWebDriver driver)
         {
