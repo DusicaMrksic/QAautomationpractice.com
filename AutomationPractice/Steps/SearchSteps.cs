@@ -1,5 +1,6 @@
 ﻿using AutomationPractice.Helpers;
 using AutomationPractice.Pages;
+using NUnit.Framework;
 using System;
 using TechTalk.SpecFlow;
 
@@ -21,7 +22,8 @@ namespace AutomationPractice
         [Then(@"results for a '(.*)' search term are displayed")]
         public void ThenResultsForASearchTermAreDisplayed(string p0)
         {
-            ScenarioContext.Current.Pending();
+            Search DressTerm = new Search(Driver);
+            Assert.True(ut.ElementDispayed(DressTerm.fnp), "Term is not dispayed");
         }
     }
 }
