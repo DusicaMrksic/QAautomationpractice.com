@@ -23,8 +23,8 @@ namespace AutomationPractice.Steps
         {
             ContactUs cus = new ContactUs(Driver);
             ut.DropdownSelect(cus.SubjectHeadingDD, TestConstants.SubjectHeadingDD);
-            string anyemail = ut.GenerateRandomEmail();
-            ut.EnterTextInElement(cus.MailAddress, anyemail);
+            //(cup.Subjectheading, heading)
+            ut.EnterTextInElement(cus.MailAddress, ut.GenerateRandomEmail());
             //ut.EnterTextInElement(cus.Message, TestConstants.messagefield);
            
         }
@@ -45,13 +45,17 @@ namespace AutomationPractice.Steps
 
         }
 
-        [Then(@"Green message is dispayed")]
-        public void ThenGreenMessageIsDispayed()
+
+        [Then(@"Message '(.*)' is present to the user")]
+        public void ThenMessageIsPresentToTheUser(string message)
         {
             ContactUs Greenmsgn = new ContactUs(Driver);
-            Assert.True(ut.ElementDispayed(Greenmsgn.greenMessage), "Message has been successfully sent to cs.");
+            Assert.That(ut.ReturnTextFromElement(Greenmsgn.greenMessage).Contains(message), "Your message has been successfully sent to our team");
+            //  Assert.True(ut.ElementDispayed(Greenmsgn.greenMessage), );
             //Assert.True(ut.TextPresentInElement("Your message has been successfully sent to our team.").Displayed);
 
         }
+
+
     }
 }

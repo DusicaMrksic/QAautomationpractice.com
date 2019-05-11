@@ -9,4 +9,5 @@ In order to use all functionalities
 	And user enter mandatory fields Subject Heading and email address
 	And user enters 'Dusica Mrksic' message in message box 
 	When user clicks on Send button
-	Then Green message is dispayed
+	Then Message 'Your message has been successfully sent to our team' is present to the user
+	

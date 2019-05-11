@@ -18,21 +18,21 @@ namespace AutomationPractice.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.2.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("ContactUs")]
-    public partial class ContactUsFeature
+    [NUnit.Framework.DescriptionAttribute("Footer")]
+    public partial class FooterFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "ContactUs.feature"
+#line 1 "Footer.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ContactUs", "In order to use all functionalities\r\n\tAs a user\r\n\tI want to be able to contact cu" +
-                    "stomer service and sent a message", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Footer", "\tIn order to avoid silly mistakes\r\n\tAs a math idiot\r\n\tI want to be told the sum o" +
+                    "f two numbers", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -65,25 +65,31 @@ namespace AutomationPractice.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("User can open page and send a message")]
-        [NUnit.Framework.CategoryAttribute("ContactUs")]
-        public virtual void UserCanOpenPageAndSendAMessage()
+        [NUnit.Framework.DescriptionAttribute("User can open links under Information section")]
+        [NUnit.Framework.CategoryAttribute("Footer")]
+        [NUnit.Framework.TestCaseAttribute("Specials", "Price drop", null)]
+        [NUnit.Framework.TestCaseAttribute("New products", "New products", null)]
+        [NUnit.Framework.TestCaseAttribute("Best sellers", "Best sellers", null)]
+        [NUnit.Framework.TestCaseAttribute("Our stores", "", null)]
+        [NUnit.Framework.TestCaseAttribute("Contact us", "", null)]
+        [NUnit.Framework.TestCaseAttribute("Terms and conditions of use", "", null)]
+        [NUnit.Framework.TestCaseAttribute("About us", "", null)]
+        [NUnit.Framework.TestCaseAttribute("Sitemap", "", null)]
+        public virtual void UserCanOpenLinksUnderInformationSection(string informationLink, string page, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User can open page and send a message", new string[] {
-                        "ContactUs"});
+            string[] @__tags = new string[] {
+                    "Footer"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User can open links under Information section", @__tags);
 #line 7
- this.ScenarioSetup(scenarioInfo);
+this.ScenarioSetup(scenarioInfo);
 #line 8
- testRunner.Given("user opens Contact us page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.When(string.Format("user clicks on \'{0}\' option", informationLink), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
- testRunner.And("user enter mandatory fields Subject Heading and email address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 10
- testRunner.And("user enters \'Dusica Mrksic\' message in message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 11
- testRunner.When("user clicks on Send button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 12
- testRunner.Then("Message \'Your message has been successfully sent to our team\' is present to the u" +
-                    "ser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("correct \'{0}\' is displayed", page), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
