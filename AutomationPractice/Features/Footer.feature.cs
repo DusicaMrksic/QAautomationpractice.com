@@ -70,11 +70,11 @@ namespace AutomationPractice.Features
         [NUnit.Framework.TestCaseAttribute("Specials", "Price drop", null)]
         [NUnit.Framework.TestCaseAttribute("New products", "New products", null)]
         [NUnit.Framework.TestCaseAttribute("Best sellers", "Best sellers", null)]
-        [NUnit.Framework.TestCaseAttribute("Our stores", "", null)]
-        [NUnit.Framework.TestCaseAttribute("Contact us", "", null)]
-        [NUnit.Framework.TestCaseAttribute("Terms and conditions of use", "", null)]
-        [NUnit.Framework.TestCaseAttribute("About us", "", null)]
-        [NUnit.Framework.TestCaseAttribute("Sitemap", "", null)]
+        [NUnit.Framework.TestCaseAttribute("Our stores", "Our store", null)]
+        [NUnit.Framework.TestCaseAttribute("Contact us", "Contact", null)]
+        [NUnit.Framework.TestCaseAttribute("Terms and conditions of use", "Terms and conditions of use", null)]
+        [NUnit.Framework.TestCaseAttribute("About us", "About us", null)]
+        [NUnit.Framework.TestCaseAttribute("Sitemap", "Sitemap", null)]
         public virtual void UserCanOpenLinksUnderInformationSection(string informationLink, string page, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -90,6 +90,38 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When(string.Format("user clicks on \'{0}\' option", informationLink), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
  testRunner.Then(string.Format("correct \'{0}\' is displayed", page), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("User can open links under My account section")]
+        [NUnit.Framework.CategoryAttribute("Footer")]
+        [NUnit.Framework.TestCaseAttribute("My orders", "Order history", null)]
+        [NUnit.Framework.TestCaseAttribute("My credit slips", "Credit slips", null)]
+        [NUnit.Framework.TestCaseAttribute("My addresses", "My addresses", null)]
+        [NUnit.Framework.TestCaseAttribute("Manage my personal information", "Your personal information", null)]
+        public virtual void UserCanOpenLinksUnderMyAccountSection(string myAccountLink, string page, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Footer"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User can open links under My account section", @__tags);
+#line 22
+this.ScenarioSetup(scenarioInfo);
+#line 23
+    testRunner.Given("user opens sign in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 24
+    testRunner.And("enters correct credentials", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 25
+    testRunner.And("user submits the login form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 26
+ testRunner.When(string.Format("user clicks on \'{0}\' section", myAccountLink), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 27
+ testRunner.Then(string.Format("correct my account \'{0}\' is displayed", page), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

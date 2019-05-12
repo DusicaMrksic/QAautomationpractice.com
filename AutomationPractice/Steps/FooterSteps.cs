@@ -17,9 +17,23 @@ namespace AutomationPractice.Steps
         }
         
         [Then(@"correct '(.*)' is displayed")]
-        public void ThenCorrectIsDisplayed(string p0)
+        public void ThenCorrectIsDisplayed(string link)
         {
-           
+
+            Assert.That(InformationLink.InformationPageDispayed(link), Is.True, "Correct page does not dispalyed");
         }
+
+        [When(@"user clicks on '(.*)' section")]
+        public void WhenUserClicksOnSection(string p0)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [Then(@"correct my account '(.*)' is displayed")]
+        public void ThenCorrectMyAccountIsDisplayed(string p0)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
     }
 }

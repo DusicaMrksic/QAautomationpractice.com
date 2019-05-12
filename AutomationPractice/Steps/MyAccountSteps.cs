@@ -11,14 +11,14 @@ namespace AutomationPractice.Steps
     {
         Utilities ut = new Utilities(Driver);
 
-        [Given(@"user opens sign in page")]
+        [StepDefinition(@"user opens sign in page")]
         public void GivenUserOpensSingInPage()
         {
             Homepage hp = new Homepage(Driver);
             ut.ClickOnElement(hp.signIn);
         }
         
-        [Given(@"enters correct credentials")]
+        [StepDefinition(@"enters correct credentials")]
         public void GivenEntersCorrectCredentials()
         {
             //objekat klase AP,metoda se poziva preko objekta ut

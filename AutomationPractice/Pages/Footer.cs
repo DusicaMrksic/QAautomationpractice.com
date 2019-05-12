@@ -21,7 +21,7 @@ namespace AutomationPractice.Pages
         public void ClickOnInformationLink(string title)
 
         {
-            By link = By.CssSelector(".toggle-footer[tittle='" + title + "']");
+            By link = By.CssSelector(".toggle-footer [title='" + title + "']");
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(60));
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(link)).Click();
 
@@ -30,10 +30,27 @@ namespace AutomationPractice.Pages
 
         public bool InformationPageDispayed(string page)
             {
-            By InformationLink = By.XPath("//*[@class='navigation_page'][contains(text(),'" + page + "')]");
+            By link = By.XPath("//*[@class='navigation_page'][contains(text(),'" + page + "')]");
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(60));
-            return wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(InformationLink)).Displayed;
+            return wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(link)).Displayed;
 
         }
+
+        public void ClickOnMyAccountLink(string title)
+
+        {
+            By link = By.CssSelector(".bullet [title='" + title + "']");
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(60));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(link)).Click();
+        }
+
+        public bool MyAccountPageDispayed(string page)
+        {
+            By link = By.XPath("//*[@class='navigation_page'][contains(text(),'" + page + "')]");
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(60));
+            return wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(link)).Displayed;
+
+        }
+
     }
 }
