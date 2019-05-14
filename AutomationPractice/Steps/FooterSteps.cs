@@ -24,15 +24,17 @@ namespace AutomationPractice.Steps
         }
 
         [When(@"user clicks on '(.*)' section")]
-        public void WhenUserClicksOnSection(string p0)
+        public void WhenUserClicksOnSection(string title)
         {
-            ScenarioContext.Current.Pending();
+            InformationLink.ClickOnInformationLink(title);
         }
 
         [Then(@"correct my account '(.*)' is displayed")]
-        public void ThenCorrectMyAccountIsDisplayed(string p0)
+        public void ThenCorrectMyAccountIsDisplayed(string page)
         {
-            ScenarioContext.Current.Pending();
+
+            //Assert.That(InformationLink.MyAccountPageDispayed(page), Is.True, "Correct page does not dispalyed");
+            Assert.True(InformationLink.MyAccountPageDispayed(page), "Correct page does not dispalyed");
         }
 
     }
